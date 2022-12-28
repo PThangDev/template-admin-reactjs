@@ -6,8 +6,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+
 import App from './App';
-import './index.css';
+import ThemeProvider from './layouts/themes/ThemeProvider';
 import reportWebVitals from './reportWebVitals';
 
 // Create a client
@@ -23,7 +24,9 @@ root.render(
     <QueryClientProvider client={queryClient}>
       {/* React Query Dev Tool */}
       <ReactQueryDevtools initialIsOpen={false} />
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );
