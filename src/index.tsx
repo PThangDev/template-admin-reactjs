@@ -9,7 +9,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
-import ThemeProvider from './layouts/themes/ThemeProvider';
+import { ThemeProvider } from './contexts';
+import GlobalThemeProvider from './layouts/themes/GlobalThemeProvider';
 import reportWebVitals from './reportWebVitals';
 
 // Create a client
@@ -26,9 +27,11 @@ root.render(
       {/* React Query Dev Tool */}
       <ReactQueryDevtools initialIsOpen={false} />
       <ThemeProvider>
-        <Router>
-          <App />
-        </Router>
+        <GlobalThemeProvider>
+          <Router>
+            <App />
+          </Router>
+        </GlobalThemeProvider>
       </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>

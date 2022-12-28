@@ -1,4 +1,4 @@
-import { CssBaseline, GlobalStyles, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material';
 import { FC, ReactNode } from 'react';
 
 import customThemes from './customThemes';
@@ -8,14 +8,14 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
+const GlobalThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   return (
-    <MuiThemeProvider theme={customThemes}>
+    <ThemeProvider theme={customThemes}>
       <CssBaseline />
       <GlobalStyles styles={globalStyles} />
       {children}
-    </MuiThemeProvider>
+    </ThemeProvider>
   );
 };
 
-export default ThemeProvider;
+export default GlobalThemeProvider;
