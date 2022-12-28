@@ -4,14 +4,27 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+// Create a client
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {},
+  },
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      {/* React Query Dev Tool */}
+      <ReactQueryDevtools initialIsOpen={false} />
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
