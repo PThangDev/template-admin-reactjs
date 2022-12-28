@@ -6,6 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 import ThemeProvider from './layouts/themes/ThemeProvider';
@@ -25,7 +26,9 @@ root.render(
       {/* React Query Dev Tool */}
       <ReactQueryDevtools initialIsOpen={false} />
       <ThemeProvider>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>
