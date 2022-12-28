@@ -1,9 +1,11 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
-interface DefaultLayoutProps {}
+interface DefaultLayoutProps {
+  children: ReactNode;
+}
 
-const DefaultLayout: FC<DefaultLayoutProps> = (props) => {
-  return <div>DefaultLayout</div>;
+const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default DefaultLayout;
