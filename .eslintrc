@@ -23,10 +23,6 @@
         "useTabs": false,
         "vueIndentScriptAndStyle": false,
         "endOfLine": "auto"
-      },
-      "error",
-      {
-        "endOfLine": "auto"
       }
     ]
   }
