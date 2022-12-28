@@ -10,7 +10,7 @@ export const local = {
   },
   set(key: string, value: any) {
     let _value = value;
-    if (typeof value !== "string" || value === undefined || value === null) {
+    if (typeof value !== 'string' || value === undefined || value === null) {
       _value = JSON.stringify(_value);
     }
     return localStorage.setItem(key, _value);
@@ -35,7 +35,7 @@ export const session = {
   },
   set(key: string, value: any) {
     let _value = value;
-    if (typeof value !== "string" || value === undefined || value === null) {
+    if (typeof value !== 'string' || value === undefined || value === null) {
       _value = JSON.stringify(_value);
     }
     return sessionStorage.setItem(key, _value);

@@ -1,8 +1,8 @@
-import routePaths from "./routePaths";
+import routePaths from './routePaths';
 
 const routes = [
   {
-    label: "Home",
+    label: 'Home',
     to: routePaths.home,
   },
 ];
