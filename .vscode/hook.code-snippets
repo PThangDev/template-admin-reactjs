@@ -1,0 +1,15 @@
+{
+  "Print react component with typescript": {
+    "prefix": "tsusehook",
+    "body": [
+      "interface Props {}",
+      "",
+      "const use${1:Hook} = (${2:props}: Props) => {$3",
+      "  return null;",
+      "};",
+      "",
+      "export default use${1:Hook};"
+    ],
+    "description": "Snippet custom hook"
+  }
+}

@@ -1,6 +1,8 @@
-type Props = {};
+import { FC } from 'react';
 
-const HomePage = (props: Props) => {
+interface HomePageProps {}
+
+const HomePage: FC<HomePageProps> = (props) => {
   return <div>HomePage</div>;
 };
 
