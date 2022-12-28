@@ -1,1 +1,2 @@
-export * as keyStorage from './keyStorage';
+export * as queryKey from './queryKey';
+export * as storageKey from './storageKey';

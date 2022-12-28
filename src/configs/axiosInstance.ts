@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { keyStorage } from 'src/constants';
+import { storageKey } from 'src/constants';
 import { storage } from 'src/utils';
 
 const axiosInstance = axios.create({
@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   function (config: AxiosRequestConfig) {
     // Do something before request is sent
-    const access_token = storage.local.get(keyStorage.accessToken);
+    const access_token = storage.local.get(storageKey.accessToken);
     if (access_token) {
       config.headers = {
         Authorization: `Bearer ${access_token}`,
